@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="lang-en">
+  <head>
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-a6706952ebb4695212a",applicationID:"838612098"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"siteName":"Maggi","event":"fireTags","pageInformation":{"pageCategory":"recipe","pageName":"recipes:easy-peasy-maggi-noodles:","pageType":"recipe","previousPageName":"Everyday recipes made deliciously simple \u0026 healthy","CookingCourseBookings":""},"siteInformation":{"zone":"EUR","country":"India","business":"Food","brand":"Maggi","language":"English","technology":"Drupal","properties":"eCommerce","siteName":"Maggi","site":"","market":"SAR","optin":""},"entityInformation":{"entityName":"Easy Peasy MAGGI Noodles Recipe","entityCategory":""},"userInformation":{"deviceType":"","userID":"","gaClientID":""}});</script>
+<meta name="description" content="Easy Peasy MAGGI Noodles Recipe - Learn how to make delicious Easy Peasy MAGGI Noodles in Quick &amp; Easy steps. Get ingredient list." />
+<meta name="facebook-domain-verification" content="lrugbx7gm37xuhvnvrgxkf9sjgxrf2" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "url": "https://www.maggi.in/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.maggi.in/sites/default/files/maggi_logo_png_0.png"
+            }
+        },
+        {
+            "@type": "Recipe",
+            "name": "Easy Peasy MAGGI Noodles Recipe",
+            "description": "There are days when we get lazy and that is when we create things like MAGGI Noodles Easy-Peasy. But, if you think we compromised on this one, you are wrong – you can never go wrong with your favourite MAGGI Noodles because there is #NothingLikeMAGGI! It’s amazing how tomatoes, onions, green peas and some cumin seeds, can make so much of a difference and the best part is – It’s as easy as one, two, three!",
+            "recipeCuisine": "\u003Ca href=\u0022/recipes/indian/\u0022 hreflang=\u0022en\u0022\u003EIndian\u003C/a\u003E",
+            "recipeYield": "2.00",
+            "keywords": "Brunch,Small meal,Main Course,Indian,Vegetarian,North Indian,Easy Snacks,MAGGI Noodles",
+            "url": "https://www.maggi.in/recipes/easy-peasy-maggi-noodles/",
+            "datePublished": "1619181629",
+            "prepTime": "PT15.00M",
+            "cookTime": "PT15.00M",
+            "totalTime": "PT32.00M",
+            "recipeIngredient": [
+                "1 Packet MAGGI 2-Minute Noodles (Masala)",
+                "4 Tablespoons MAGGI Rich Tomato Ketchup",
+                "1 Tablespoon Oil",
+                "1 Teaspoon Cumin Seeds",
+                "2 Tomato (Finely Chopped)",
+                "1 Onion (Finely Chopped)",
+                "1 Cup Peas",
+                "1 Pinch Salt"
+            ],
+            "recipeInstructions": [
+                "Prepare ingredients as mentioned in the list.",
+                "Heat the oil and then roast the cumin seeds in it. Then",
+                "toss in the tomatoes",
+                "the onions and cook them well. Add the peas and the MAGGI Tomato ketchup",
+                "give it a stir",
+                "and let them cook for a while!",
+                "Cook one pack of MAGGI Masala Noodles (just follow the instructions on the pack!) and transfer it onto a dish.",
+                "Put the cumin-tomato-onion mix right on top of the MAGGI noodles and you are ready to serve the easy peasy fun!"
+            ],
+            "recipeCategory": "Main Course",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "https://d1uz88p17r663j.cloudfront.net/original/f467223dca2ce18ba40fdc62fa8440ec_A42I0437.jpg"
+            },
+            "nutrition": {
+                "@type": "NutritionInformation",
+                "servingSize": "perServing"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4",
+                "ratingCount": "21",
+                "bestRating": "5",
+                "worstRating": "1"
+            }
+        }
+    ]
+}</script>
+<link rel="shortcut icon" href="/sites/default/files/favicon1_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://www.maggi.in/recipes/easy-peasy-maggi-noodles/" />
+<link rel="canonical" href="https://www.maggi.in/recipes/easy-peasy-maggi-noodles/" />
+<link rel="shortlink" href="https://www.maggi.in/node/87083/" />
+<link rel="revision" href="https://www.maggi.in/recipes/easy-peasy-maggi-noodles/" />
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5CFBVH');</script>
+
+    <title>Easy Peasy MAGGI Noodles Recipe, How to Make Tasty Easy Peasy MAGGI</title>
+	 
+			   
+		
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_rhyioNZSvk8g0He9deMcYBbEC7wCcRGdPu3s3V2jaec.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_cTYGTM1qrqCYbnW59U9RoUXIQtZFbNc_NT_kSg-lR60.css" />
+
+      <script src="//cdn.adimo.co/scripts/multi-touchpoint.min.js"></script>
+
+
+        							<style>
+					.h1,.h2,.h4,.h5,.heading3,.label3,.mg-search__banner_overtext input,.navigation-links,body,h1,h2,h3,h4,h5,html{}.text--dark-gray{color:#333}.text--white{color:#fff}.text--black{color:#000}.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px;}@media screen and (min-width:768px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px}}@media screen and (min-width:1024px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px}}@media screen and (min-width:1200px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:16px;line-height:26px}}.navigation-links{font-size:9px;line-height:14px;}@media screen and (min-width:768px){.navigation-links{font-size:9px;line-height:14px}}@media screen and (min-width:1024px){.navigation-links{font-size:10px;line-height:14px}}@media screen and (min-width:1200px){.navigation-links{font-size:12px;line-height:16px}}@media print,screen and (min-width:48em){.mg-navigation{width:3.75rem}}@media print,screen and (min-width:64em){.mg-navigation{width:5rem}}@media screen and (min-width:75em){.mg-navigation{width:6.25rem}}@media screen and (max-width:47.99875em){.mg-navigation .brand-logo{cursor:pointer;position:fixed;top:2.0625rem;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);margin-top:1.375rem;z-index:1;opacity:1;-webkit-transition:opacity .3s ease-in;transition:opacity .3s ease-in}}.mg-navigation .hide-logo{opacity:0}@media screen and (max-width:47.99875em){.mg-navigation .brand-logo img{width:5.6875rem;height:3.625rem}}.mg-navigation .navigation-container{z-index:5;bottom:0;width:100%;position:fixed}@media print,screen and (min-width:48em){.mg-navigation .navigation-container{height:inherit;width:3.75rem;position:fixed;top:0;bottom:0;-webkit-box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);overflow:-moz-scrollbars-none;-ms-overflow-style:none}.mg-navigation .navigation-container::-webkit-scrollbar{width:0!important}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container{width:5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container{width:6.25rem}}.mg-navigation .navigation-container .mg-navigation-l1{z-index:13;-webkit-box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);overflow:visible;overflow:-moz-scrollbars-none;-ms-overflow-style:none}.mg-navigation .navigation-container .mg-navigation-l1::-webkit-scrollbar{width:0!important}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1{position:relative;height:100vh;background:#fff}}.mg-navigation .navigation-container .mg-navigation-l1 .logo{position:relative;z-index:9;outline:0 none;border:0}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 .logo{cursor:pointer;position:fixed;top:2.0625rem;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);margin-top:1.375rem}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 .logo.hide-brandlogo,.mg-navigation .navigation-container .mg-navigation-l1 .logo.hide-logo{top:-6.875rem}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 .logo{height:8.125rem;text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}}.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:5.6875rem;height:3.625rem;max-width:unset;margin-right:-1.875rem}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:4.125rem;height:2.625rem}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:5.625rem;height:3.5625rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:7.0625rem;height:4.5rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{margin:0}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{overflow:scroll;height:4.375rem;padding:.8125rem .75rem 0;background:#fff}}@media screen and (max-width:47.99875em) and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify}}@media screen and (max-width:47.99875em) and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:block}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:block;overflow-y:scroll;height:calc(100vh - 150px)}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{-ms-overflow-style:none}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{list-style:none;text-align:center;color:#333}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{display:table-cell;padding-right:.5625rem;min-width:4.5rem}}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{padding-right:0;display:block}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{margin-top:2.5rem;height:2.8125rem;padding:0 .125rem;padding:0}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{margin-top:3.125rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li:last-child{margin-bottom:2.5rem;padding-right:0}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;min-width:3.75rem;text-decoration:none}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{opacity:.42;max-width:1.5625rem;max-height:1.5625rem}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{max-width:1.5rem;max-height:1.5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{max-width:1.875rem;max-height:1.875rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:.6875rem;margin-top:.4375rem;color:#333}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:.875rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:1rem}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{width:3.75rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active img,.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links:hover img{opacity:1}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active span{padding-bottom:.4375rem;border-bottom:.4375rem solid #fff33e}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active span{border-bottom:.25rem solid #fff33e}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{padding:.8125rem 0 0}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{display:block;overflow-y:scroll;height:calc(100vh - 150px)}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{-ms-overflow-style:none}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li{padding-right:.625rem;min-width:3.75rem}}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li{padding-right:0;display:block}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li:nth-child(5){padding-right:0}.mg-navigation .navigation-container .mg-navigation-l2{width:0;height:0;z-index:12;position:fixed;-webkit-transition-delay:.15s;transition-delay:.15s;background:#fff}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2{z-index:-1;bottom:0;width:100%;max-height:65vh;overflow-y:auto;-webkit-transition:height .3s linear;transition:height .3s linear}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2{top:0;height:100vh;-webkit-transition:width .3s linear;transition:width .3s linear;left:0}}.mg-navigation .navigation-container .mg-navigation-l2.active{-webkit-box-shadow:0 -.625rem 0 1.25rem 0 rgba(0,0,0,.1);box-shadow:0 -.625rem 0 1.25rem 0 rgba(0,0,0,.1)}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2.active{bottom:4.375rem;height:25rem;max-height:34.375rem}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2.active{position:absolute;width:18rem;left:3.6875rem}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l2.active{width:16.5rem;left:4.9375rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l2.active{width:24.9375rem;left:6.1875rem}}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout{float:right;width:1.5rem;opacity:0;margin:1.75rem 1.75rem 0 0}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout.close-animate{-webkit-animation:flyout-close-scale .5s ease-in-out forwards;animation:flyout-close-scale .5s ease-in-out forwards;-webkit-animation-delay:.15s;animation-delay:.15s}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout{position:fixed;right:0;z-index:9}}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout.hide-close-flyout{-webkit-animation:flyout-close-skew .3s ease-in-out forwards;animation:flyout-close-skew .3s ease-in-out forwards;-webkit-animation-delay:0;animation-delay:0}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout span{background-repeat:no-repeat;display:block;height:1.5rem;width:1.5rem;background-size:1.5rem}.mg-navigation .navigation-container .mg-navigation-l2 ul{padding-top:4.4375rem;padding-left:0}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2 ul{position:absolute;top:50%;left:0;margin-right:-50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:0 3.6875rem;max-height:87vh;overflow-y:auto}.mg-navigation .navigation-container .mg-navigation-l2 ul::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l2 ul{-ms-overflow-style:none}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l2 ul{padding:0 2.5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l2 ul{padding:0 3.9375rem}}.mg-navigation .navigation-container .mg-navigation-l2 ul li{list-style:none;opacity:0;text-align:left;margin-bottom:1.375rem;-webkit-animation:slideInFromLeft .3s ease-out forwards;animation:slideInFromLeft .3s ease-out forwards}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2 ul li{text-align:center}}.mg-navigation .navigation-container .mg-navigation-l2 ul li:last-child{margin-bottom:1.9375rem}.mg-navigation .navigation-container .mg-navigation-l2 ul li a{color:#999;display:inline-block}.mg-navigation .navigation-container .mg-navigation-l2 ul li a:active,.mg-navigation .navigation-container .mg-navigation-l2 ul li a:focus,.mg-navigation .navigation-container .mg-navigation-l2 ul li a:hover{color:#333}.firefox .mg-navigation{overflow:hidden}.firefox .mg-navigation .navigation-container{overflow:unset}.firefox .mg-navigation .mg-navigation-l2.active{overflow:hidden}.firefox .mg-navigation .mg-navigation-l1{z-index:13;overflow:auto}@media print,screen and (min-width:48em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{height:80vh;overflow-y:scroll;margin-bottom:3.125rem}}@media print,screen and (min-width:64em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{width:100%;overflow-y:hidden}}@media screen and (min-width:75em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{width:100%}}@media print,screen and (min-width:48em){.firefox .mg-navigation .mg-navigation-l1{position:fixed;overflow:visible;width:3.75rem}}@media print,screen and (min-width:64em){.firefox .mg-navigation .mg-navigation-l1{width:5rem}}@media screen and (min-width:75em){.firefox .mg-navigation .mg-navigation-l1{width:6.25rem}}.firefox .mg-navigation .mg-navigation-l2.active{position:absolute}.firefox ul.navigation-sub-links{width:106%}.edge .mg-navigation .navigation-container .mg-navigation-l1 .logo img,.ie .mg-navigation .navigation-container .mg-navigation-l1 .logo img{max-width:113px}@media print,screen and (min-width:64em){.edge .mg-navigation-l2,.ie .mg-navigation-l2{z-index:-1;opacity:0}.edge .mg-navigation-l2.active,.ie .mg-navigation-l2.active{opacity:1;z-index:12}}@media screen and (max-width:47.99875em){.iphone .mg-navigation .brand-logo{z-index:1;display:block}}.mg-main-wrapper{position:relative}.mg-menu-container{background:0 0}@media print,screen and (min-width:48em){.mg-menu-container{width:3.75rem}}@media print,screen and (min-width:64em){.mg-menu-container{width:5rem}}@media screen and (min-width:75em){.mg-menu-container{width:6.25rem}}
+				</style>
+				
+                        <script type="text/javascript" src="/modules/contrib/seckit/js/seckit.document_write.js"></script>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-no-body" media="all" href="/modules/contrib/seckit/css/seckit.no_body.css" />
+        <!-- stop SecKit protection -->
+        <noscript>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-noscript-tag" media="all" href="/modules/contrib/seckit/css/seckit.noscript_tag.css" />
+        <div id="seckit-noscript-tag">
+          Sorry, you need to enable JavaScript to visit this website.
+        </div>
+        </noscript></head>
+        <body>
+                    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CFBVH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <!-- ASSIGNED dumppp -->
+<div class="grid-container no-margin no-padding">
+	<div class="grid-x">
+		<div class="cell small-24">
+			<main class="mg-main-wrapper" id="main">
+				<div class="grid-container no-margin no-padding">
+					<div class="grid-x">
+						<div class="cell mg-menu-container">
+							  
+
+
+<section class="mg-navigation mg-js-navigation">
+    <a href="https://www.maggi.in" title="Maggi" target="" class="brand-logo hide-for-medium">
+        <img src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="Maggi" width="100">
+    </a>
+    <div class="navigation-container">
+        <div class="mg-navigation-l1">
+            <a href="https://www.maggi.in" title="Maggi" target="" class="logo show-for-medium">
+                <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="Maggi">
+            </a>
+            <ul class="navigation-list ">
+                                                            <li>
+															<a href="" title="Recipes" target="_self" class="navigation-links has-child-menu">
+									<img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg" alt="Recipes">
+									<span>Recipes</span>
+								</a>
+							                        </li>
+                                            <li>
+															<a href="" title="Maggi" target="_self" class="navigation-links has-child-menu">
+									<img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg" alt="Maggi">
+									<span>Maggi</span>
+								</a>
+							                        </li>
+                                            <li>
+															<a href="/search/" title="Search" target="_self" class="navigation-links ">
+									<img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg" alt="Search">
+									<span>Search</span>
+								</a>
+							                        </li>
+                                            <li>
+															<a href="/login" title="Login" target="_self" class="navigation-links ">
+									<img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg" alt="Login">
+									<span>Login</span>
+								</a>
+							                        </li>
+                                                </ul>
+        </div>
+        <div class="mg-navigation-l2">
+            <a href="javascript:void(0)" title="Close Flyout" class="close-flyout">
+                <span class="close"></span>
+            </a>
+                            <div>
+                                            <ul class="navigation-sub-links hide">
+                                                                                                <li>
+                                        <a href="/recipe-overview/" title="All Recipes" target="_self" class="">
+                                            All Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipe-category/" title="Our Collection" target="_self" class="">
+                                            Our Collection
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/quick-easy/" title="Quick &amp; Easy Recipes" target="_self" class="">
+                                            Quick &amp; Easy Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/easy-snacks/" title="Easy Snacks Recipes" target="_self" class="">
+                                            Easy Snacks Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/restaurant-style-home/" title="Restaurant Style at Home" target="_self" class="">
+                                            Restaurant Style at Home
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/healthy/" title="Healthy Recipes" target="_self" class="">
+                                            Healthy Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/maggi-noodles/" title="MAGGI Noodles Recipes" target="_self" class="">
+                                            MAGGI Noodles Recipes
+                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                            <ul class="navigation-sub-links hide">
+                                                                                                <li>
+                                        <a href="/our-range/" title="Our Range" target="_self" class="">
+                                            Our Range
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.nestle.in/aboutus" title="About Us" target="_blank" class="">
+                                            About Us
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/faq/" title="FAQ" target="_self" class="">
+                                            FAQ
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/from-our-kitchen/" title="From Our Kitchen" target="_self" class="">
+                                            From Our Kitchen
+                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                            <ul class="navigation-sub-links hide">
+                                                    </ul>
+                                            <ul class="navigation-sub-links hide">
+                                                    </ul>
+                                    </div>
+                    </div>
+        <div class="main-nvigation-blocker"></div>
+    </div>
+</section>
+
+
+						</div>
+						<div class="cell small-24 medium-auto mg-containt-container">
+															
+<div data-drupal-messages-fallback class="hidden"></div>
+        <div class="grid-container no-margin mg-recipes-template mg-50-50-template mg-50-50-template-override">
+    <div class="grid-x">
+      <div class="cell small-24 medium-24 large-10 xlarge-10  mg-full-width ">
+                
+<div class="mg-recipe-stage js-mg-recipe-stage mg-rdp-single-column">
+    <div class="mg-slick mg-stage-carousel">
+        
+                    <div class="mg-stage-carousel__slide slideUp mg-js-video">
+                <picture>
+                    <source media="(min-width: 1200px)" data-srcset='https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_1500_700.jpg'>
+                    <source media="(min-width: 1024px)" data-srcset='https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_944_531.jpg'>
+                    <source media="(min-width: 768px)" data-srcset='https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_708_600.jpg'>
+                    <source media="(min-width: 0px)" data-srcset='https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_375_400.jpg'>
+                    <img class="lazyload" alt="Easy Peasy MAGGI Noodles Recipe" data-src='https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_944_531.jpg'>
+                </picture>
+                            </div>
+            </div>
+    <div class="mg-slick-controls mg-stage-controls"></div>
+</div>
+
+          <script> dataLayer = dataLayer || [];
+    dataLayer.push({
+      event: "recipeMymenu",
+      eventCategory: "Engagement",
+      eventAction: "MyMenu IQ Impression",
+      eventLabel: "Easy Peasy MAGGI Noodles Recipe"
+    });
+
+    var nutritional_text_details = {
+      "0-44":{
+        "nutritional_balance_title" : "Room for Balance Improvement",
+        "nutritional_balance_desc" : "Your meal is not well balanced",
+        "cssClasses" : "score-bad",
+        "strokeColor": "#97D815"
+      },
+      "45-69":{
+        "nutritional_balance_title" : "Good Balance",
+        "nutritional_balance_desc" : "Your meal is having good balance"
+        "cssClasses" : "score-medium",
+        "strokeColor": "#F1D100"
+      },
+      "70-100":{
+        "nutritional_balance_title" : "Great Balance",
+        "nutritional_balance_desc" : "Your meal is  having great nutritional value"
+        "cssClasses" : "score-good",
+        "strokeColor": "#FF8C28"
+      },
+    };
+  </script>
+  <div class="mg-stagemymenu mg-stagemymenu-override js-mg-stage-menu"
+       data-recipename="Easy Peasy MAGGI Noodles Recipe"
+       data-recipescore='80'>
+    <div class="cell small-24 mg-stagemymenu__container">
+      <div class="circle">
+                                  <svg class="progress-ring" data-percent="80"  data-updated-percent="80"  data-after-score-text="of 100">
+          <circle
+            class="progress-ring__base_circle"
+            stroke="#8e8171"
+            stroke-width="6"
+            stroke-dasharray=""
+            stroke-dashoffset=""
+            fill="transparent"
+            r="50"
+            cx="50%"
+            cy="50%"/>
+
+          <circle
+            class="progress-ring__circle"
+            stroke="#97D815"
+            stroke-width="6"
+            stroke-dasharray=""
+            stroke-dashoffset=""
+            fill="transparent"
+            r="50"
+            cx="50%"
+            cy="50%"/>
+
+        </svg>
+        <div class="nutritional_score"  data-show-score="">
+          80
+          <span>of 100</span>
+        </div>
+      </div>
+
+      <div class="title">
+        <div class="title-text">Balance your meal</div>
+        <img class="yellow-arrow"
+             src="/modules/contrib/dsu_srh/modules/ln_srh_mymenuiq/images/yellow-arrow.png">
+      </div>
+          </div>
+          <div class="cell stagemymenu_overlay-wrapper">
+
+        <div class="stagemymenu-bg-mask"></div>
+                <div class="stagemymenu_overlay stagemymenu_overlay-override">
+          
+<div id="content" class="">
+    <div class="stagemymenu_overlay_close"><a href="javascript:void(0)">X</a></div>
+    <div class="mymenuiq-score-info-container-wrapper">
+        <div class="cell primary_part">
+            <div class="mymenu-title">MyMenu IQ™</div>
+
+        </div>
+        <div class="nutritional_container">
+            <div class="circle">
+                                                                    <svg class="progress-ring" data-percent="80" data-updated-percent="80" data-after-score-text="of 100">
+
+                    <circle
+                            class="progress-ring__base_circle"
+                            stroke="#8e8171"
+                            stroke-width="6"
+                            stroke-dasharray=""
+                            stroke-dashoffset=""
+                            fill="transparent"
+                            r="50"
+                            cx="50%"
+                            cy="50%"/>
+
+                    <circle
+                            class="progress-ring__circle"
+                            stroke="#97D815"
+                            stroke-width="6"
+                            stroke-dasharray=""
+                            stroke-dashoffset=""
+                            fill="transparent"
+                            r="50"
+                            cx="50%"
+                            cy="50%"/>
+                </svg>
+                <div class="nutritional_score" data-show-score="">
+                    80
+                    <span>of 100</span>
+                </div>
+            </div>
+        </div>
+        <div class="nutritional_balance">Great Balance</div>
+        <div
+                class="nutritional_balance_text">Your meal is well balanced</div>
+        <button id="accordion_button" type="button"
+                class="btn btn-light">What does it mean?</button>
+    </div>
+            <div class="mymenuiq-side-recipes-container-wrapper">
+            <div class="meal-score score-medium" data-score="80">
+  <h3 class="title-choose">
+    <span>Balance your menu</span>
+  </h3>
+  <div class="add-dish-wrapper">
+    <div class="additional-dish">
+              <div class=" meal" data-dish-type="1">
+          <div class="added-dish-wrapper hide"></div>
+          <div class="meal-wrapper">
+            <a class="meal-title" id="">Starters</a>
+            <div class="meal-img-wrapper">
+              <div class="meal-img-container">
+                <img alt="" title="" class="rounded-circle add-img"
+                     src="/modules/contrib/dsu_srh/modules/ln_srh_mymenuiq/images/add-meal.png">
+                <span class="meal-img"></span>
+              </div>
+            </div>
+            <span class="add-meal-text" id=""> add to meal</span>
+          </div>
+        </div>
+              <div class=" meal" data-dish-type="3">
+          <div class="added-dish-wrapper hide"></div>
+          <div class="meal-wrapper">
+            <a class="meal-title" id="">Dessert</a>
+            <div class="meal-img-wrapper">
+              <div class="meal-img-container">
+                <img alt="" title="" class="rounded-circle add-img"
+                     src="/modules/contrib/dsu_srh/modules/ln_srh_mymenuiq/images/add-meal.png">
+                <span class="meal-img"></span>
+              </div>
+            </div>
+            <span class="add-meal-text" id=""> add to meal</span>
+          </div>
+        </div>
+              <div class=" meal" data-dish-type="2">
+          <div class="added-dish-wrapper hide"></div>
+          <div class="meal-wrapper">
+            <a class="meal-title" id="">Side dish</a>
+            <div class="meal-img-wrapper">
+              <div class="meal-img-container">
+                <img alt="" title="" class="rounded-circle add-img"
+                     src="/modules/contrib/dsu_srh/modules/ln_srh_mymenuiq/images/add-meal.png">
+                <span class="meal-img"></span>
+              </div>
+            </div>
+            <span class="add-meal-text" id=""> add to meal</span>
+          </div>
+        </div>
+          </div>
+  </div>
+  <div id="side_dishes"></div>
+  <div class="see_combined_receipes">
+    <a href="javascript:void(0)" class="see_combined_receipes_CTA">
+      <i class="right-chevron"></i>
+      See Combined Recipes
+    </a>
+  </div>
+  <div class="enjoy_your_meal">
+    <a href="javascript:void(0)" class="enjoy_your_meal_CTA">
+      Now enjoy your meal!
+    </a>
+  </div>
+
+</div>
+        </div>
+    </div>
+
+<div class="secondary_part">
+    <div id="close-accordion" class="close-acc show-me">
+        <span class="close-secondary-part">
+            <i class="left-chevron"></i> Back
+        </span>
+    </div>
+    <div class="secondary_part-content-wrapper">
+        <div class="grid-container">
+  <div class="grid-x mg-accordion accordion-override">
+    <div
+      class="cell small-24  medium-14 medium-offset-5  mg-gutter-container ">
+      <div id="accordionTemp" class="accordion border-bottom-none is-visible"
+           multiexpand="true">
+                                                <div class="accordion-group">
+              <div class="panel-title">
+                <a data-toggle="collapse" data-parent="accordionTemp"
+                   href="#accordion1" aria-expanded="false"
+                   aria-controls="accordion1" class = "accordion-function" data-topic = "Want to know more about MyMenu IQ™?">
+                  <h3 class="mg-dark">Want to know more about MyMenu IQ™?</h3>
+                </a>
+                <i class="accordion1 fas fa-sm arrow-down"></i>
+              </div>
+              <div id="accordion1"
+                   class="collapse panel-content bodycopy-small mg-generic-text__description">
+                                    <div class="cell stagemymenu_overlay_accordion1">
+
+          <div class="part-1">
+        <div class="title">What is a balanced menu?</div>
+        <div class="description"><p>A balanced menu provides a variety of food groups and key nutrients.</p>
+
+<p>MyMenu IQ™ generates a nutritional score, considering the energy content and the nutrients in the menu, and their contribution towards achieving nutritional recommendations as based on a 2,000 kcal daily diet for an average adult.</p>
+
+<p>MyMenu IQ™ guides you to select a balanced menu on a scale from 0 to 100, with focus on the main meal.</p>
+</div>
+      </div>
+        <div class="part-2">
+              <div class="heading">What does the MyMenu IQ™ score mean ?</div>
+      
+              <div class="group">
+          <div class="title">
+			<span class="range-icon">
+				<svg class="balance_improvement" height="24px" width="24px">
+  					<circle cx="50%" cy="50%" r="12" stroke="" stroke-width=""/>
+				</svg>
+			</span>
+            Room for Balance Improvement
+                          <span class="range"> (0 - 44)</span>
+                      </div>
+                      <div class="description">This menu has room to improve its nutritional balance to help you meet dietary and nutritional recommendations.
+</div>
+                  </div>
+              <div class="group">
+          <div class="title">
+			<span class="range-icon">
+				<svg class="good_balance" height="24px" width="24px">
+  					<circle cx="50%" cy="50%" r="12" stroke="" stroke-width=""/>
+				</svg>
+			</span>
+            Good Balance
+                          <span class="range"> (45 - 69)</span>
+                      </div>
+                      <div class="description">This menu has great nutritional balance, providing a good variety of food groups and key nutrients.</div>
+                  </div>
+              <div class="group">
+          <div class="title">
+			<span class="range-icon">
+				<svg class="great_balance" height="24px" width="24px">
+  					<circle cx="50%" cy="50%" r="12" stroke="" stroke-width=""/>
+				</svg>
+			</span>
+            Great Balance
+                          <span class="range"> (70 - 100)</span>
+                      </div>
+                      <div class="description">This menu has great nutritional balance, providing a good variety of food groups and key nutrients.</div>
+                  </div>
+                    <div class="disclaimer">&quot;The MyMenu IQ™ score applies to the digital recipe as described on the site. Nutrition composition data for food ingredients and food products is based on Standard Food Composition Databases such as USDA SR28, BLS32 as well as food label data.&quot;
+</div>
+          </div>
+  </div>
+                              </div>
+                          </div>
+                                                  <div class="accordion-group">
+              <div class="panel-title">
+                <a data-toggle="collapse" data-parent="accordionTemp"
+                   href="#accordion2" aria-expanded="false"
+                   aria-controls="accordion2" class = "accordion-function" data-topic = "What is the energy content breakdown?">
+                  <h3 class="mg-dark">What is the energy content breakdown?</h3>
+                </a>
+                <i class="accordion2 fas fa-sm arrow-down"></i>
+              </div>
+              <div id="accordion2"
+                   class="collapse panel-content bodycopy-small mg-generic-text__description">
+                                    <div class="cell stagemymenu_overlay_accordion2">
+    <div class="part-2">
+                        <div class="graph-section">
+            <div class="name">Protein</div>
+            <div class="bar-main">
+              <div class="bar-sub"
+                   style="right:90%"></div>
+            </div>
+            <div class="units"><span>8.9g</span> /
+              <span>10%</span></div>
+          </div>
+                                <div class="graph-section">
+            <div class="name">Carbohydrates</div>
+            <div class="bar-main">
+              <div class="bar-sub"
+                   style="right:45%"></div>
+            </div>
+            <div class="units"><span>49.3g</span> /
+              <span>55%</span></div>
+          </div>
+                                <div class="graph-section">
+            <div class="name">Fats</div>
+            <div class="bar-main">
+              <div class="bar-sub"
+                   style="right:66%"></div>
+            </div>
+            <div class="units"><span>13.8g</span> /
+              <span>34%</span></div>
+          </div>
+                            <div class="disclaimer">The energy content breakdown shows the amount of the macronutrients (i.e. carbohydrate, protein and fat) contained in one serving of the recipe and their relative contribution (in %) to the total energy content of the serving.</div>
+          </div>
+  </div>
+                              </div>
+                          </div>
+                        </div>
+    </div>
+  </div>
+</div>
+
+                    <div class="nutritional_tips">
+                                    <div class="heading"><h3>Nutritional tips</h3></div>
+                                <ul>
+                                            <li>Incorporate diverse and colourful vegetables</li>
+                                    </ul>
+            </div>
+            </div>
+
+</div>
+        </div>
+        <div class="combined_recipes">
+          <div class="combined_recipes_content">
+  <a class="close-combined-recipe" href="javascript:void(0)">
+    <span>x</span>
+  </a>
+  <div class="combined_recipes_images">
+    <div class="row">
+      <div class="col-6 col-xs-6 no-padding">
+        <img src="https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_708_600.jpg">
+      </div>
+      <div class="col-6 col-xs-6 no-padding">
+        <img class="side-dish-selected-img" src="https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_708_600.jpg">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="cell primary_part mb-10">
+      <div class="mymenu-title">MyMenu IQ™</div>
+    </div>
+    <div class="cell primary_part">
+      <div class="combined_recipe_titles_wrapper ">
+                <a href="https://www.maggi.in/recipes/easy-peasy-maggi-noodles/" class="main-dish-title" target="_blank">
+          <h2>Easy Peasy MAGGI Noodles Recipe</h2></a>
+        <span class="plus-sign">+</span>
+        <a href="javascript:void(0)" class="side-dish-added-title" target="_blank">
+          <h2>Easy Peasy MAGGI Noodles Recipe</h2></a>
+      </div>
+      <div class="combined_link_back_wrapper">
+        <a class="combined_link_back" href="#">
+          <i class="left-chevron"></i>
+          Not the right choice? Go back
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+      </div>
+
+  
+      </div>
+      <div class="cell small-24 medium-20 medium-offset-2 large-10 mg-recipe-ins  mg-full-width-with-gutter ">
+                
+<div class="grid-x mg-recipe-labels">
+    <div class="cell">
+                                    <span>Indian</span>
+                                                                    <span>Main Course</span>
+                        </div>
+</div>
+
+
+        
+<div class="grid-container no-margin-from-top no-padding">
+  <div class="grid-x mg-recipe-header">
+    <div class="cell small-24  medium-20 medium-offset-2  mg-gutter-container">
+              <h1 class=" ">Easy Peasy MAGGI Noodles Recipe</h1>
+                          <div
+          class="cell">
+                                               		     <div class="mg-pills rating" data-gtmevent='{&quot;event&quot;: &quot;ratingValue&quot;, &quot;ratingValue&quot;: 3.8}' >
+          
+              <div class="mg-stars"> 
+         <span class="small active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class="small active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class="small active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class="small active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class="small ">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+        </div>
+      
+            <span>21</span>
+  </div>
+  
+                           		     <div class="mg-pills time" data-gtmevent='{&quot;event&quot;: &quot;recipeDuration&quot;, &quot;recipeDuration&quot;: &quot;32Min&quot;}' >
+                        <div class="pills-image"></div>
+                  <span>32Min</span>
+  </div>
+  
+                           		     <div class="mg-pills complexity" data-gtmevent='{&quot;event&quot;: &quot;recipeDifficultyLevel&quot;, &quot;recipeDifficultyLevel&quot;: &quot;Easy&quot;}' >
+                        <div class="pills-image"></div>
+                  <span>Easy</span>
+  </div>
+  
+        </div>
+          </div>
+  </div>
+</div>
+
+        <div class="grid-container no-padding recipe-variant-container">
+        <h2>Recipe Variants</h2>
+        <ul class="grid-x recipe-variant-tabs">
+                <li class="cell small-6">
+            <a class="recipe-tab  active" href="/recipes/easy-peasy-maggi-noodles/" title="">
+                <div class="image-holder">
+                    <img  src="https://www.maggi.in/sites/default/files/classic.png"  alt =   />
+                </div>
+                <span class="label2">Classic</span>
+            </a>
+        </li>
+                <li class="cell small-6">
+            <a class="recipe-tab  " href="/recipes/easy-peasy-kasoori-methi-maggi-noodles/" title="Easy Peasy Kasoori Methi MAGGI Noodles Recipe">
+                <div class="image-holder">
+                    <img  src="https://www.maggi.in/sites/default/files/twist.png"  alt =   />
+                </div>
+                <span class="label2">Make it with a twist</span>
+            </a>
+        </li>
+            </ul>
+</div>
+
+
+        
+ 
+      <div class="grid-container grid-x  mg-quote-with-background ">
+        <div class="cell small-24  medium-20 medium-offset-2  mg-gutter-container">
+          <div class="grid-x mg-quote">
+                        <div class="cell mg-quote-desc" data-animation="mg-pills_slideInFromLeft">
+              There are days when we get lazy and that is when we create things like MAGGI Noodles Easy-Peasy. But, if you think we compromised on this one, you are wrong – you can never go wrong with your favourite MAGGI Noodles because there is #NothingLikeMAGGI! It’s amazing how tomatoes, onions, green peas and some cumin seeds, can make so much of a difference and the best part is – It’s as easy as one, two, three!
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+        <div class="grid-container no-padding">
+	<div
+		class="grid-x mg-ingredients js-mg-ingredients">
+				<div class="cell small-24  medium-20 medium-offset-2  mg-gutter-container">
+			<div class="mg-ingredients__title">
+				<h2>Ingredients</h2>
+				<div class="mg-ingredients__controls " data-default-proportion="2">
+					<a data-minus="1" href="javascript:void(0)" >-</a>
+					<div>
+						<i>2</i>
+						Servings
+					</div>
+					<a data-plus="1" href="javascript:void(0)" >+</a>
+				</div>
+			</div>
+			<div class="mg-ingredients__warning hide">
+				<p>
+					This dish was made for <span class="js-mg-ingredients-proportion">2</span>
+					<a class="mg-ingredients__warning-cta" harf="javascript:void(0)"> here</a>
+				</p>
+			</div>
+			<div class="mg-ingredients__table">
+								<p class="separator hide">
+									</p>
+																					<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">1</em>&nbsp;
+											
+											<em class="mg-ingredient-unit">Packet</em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							MAGGI 2-Minute Noodles (Masala)
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">4</em>&nbsp;
+											
+											<em class="mg-ingredient-unit">Tablespoons</em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							MAGGI Rich Tomato Ketchup
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">1</em>&nbsp;
+											
+											<em class="mg-ingredient-unit">Tablespoon</em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							Oil
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">1</em>&nbsp;
+											
+											<em class="mg-ingredient-unit">Teaspoon</em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							Cumin Seeds
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">2</em>&nbsp;
+											
+											<em class="mg-ingredient-unit"></em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							Tomato (Finely Chopped)
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">1</em>&nbsp;
+											
+											<em class="mg-ingredient-unit"></em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							Onion (Finely Chopped)
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">1</em>&nbsp;
+											
+											<em class="mg-ingredient-unit">Cup</em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							Peas
+																					</em>
+																																								</div>
+															
+													</div>
+																										<div>
+																								<div class="mg-span recipe-ingredient-unit">
+									    											<em class="mg-ingredient-quantity">1</em>&nbsp;
+											
+											<em class="mg-ingredient-unit">Pinch</em>
+											
+																				</div>
+									<div class="mg-span recipe-ingredient-name">
+										<em>
+																							Salt
+																					</em>
+																																								</div>
+															
+													</div>
+												</div>
+			<script type="text/javascript">
+				window.ingredients = [{"label":"MAGGI 2-Minute Noodles (Masala)","value":"1","unit":"Packet","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"MAGGI Rich Tomato Ketchup","value":"4","unit":"Tablespoons","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"Oil","value":"1","unit":"Tablespoon","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"Cumin Seeds","value":"1","unit":"Teaspoon","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"Tomato (Finely Chopped)","value":"2","unit":"","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"Onion (Finely Chopped)","value":"1","unit":"","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"Peas","value":"1","unit":"Cup","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}},{"label":"Salt","value":"1","unit":"Pinch","showquantity":true,"alternativevalue":"","alternativeunit":"","rel_product":"","alt_ingredient":{"alt_ing_label":"TEST LABEL","alt_title":"","description":"","img_src":"https:\/\/www.maggi.in\/themes\/custom\/maggi\/images\/veggies.png"}}];
+			</script>
+			<div class="mg-ingredients__btn">
+																	<a  href="javascript:void(0)" class="mg-btn mg-ingredients__copy" title="" target=""  rel="follow" >
+	<div>
+					Copy
+							</div>
+</a>
+			
+			</div>
+		</div>
+
+		<div class="hide mg-ingredients__warning-overlay">
+			<div class="mg-term-condition">
+				<h3 class="heading3">Overlay Header</h3>
+				<p>Our 5 best tips &amp; tricks for customized portion sizes.</p>
+			</div>
+		</div>
+
+		<div class="hide mg-ingredients__copy-overlay">
+			<div class="mg-term-condition">
+				<h3 class="heading3"> Export ingredients</h3>
+				<p>Choose from the list of ingredients</p>
+				<div class="js-mg-table-wrapper" data-selectall="Select All"></div>
+				<a  href="javascript:void(0)" class="mg-btn mg-ingredients__copy_popup_btn inactive" title="" target=""  rel="follow" >
+	<div>
+					Copy
+							</div>
+</a>
+				<div class="mg-copy-notification hide">Ingredients are now on your clipboard</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+          <div class="grid-container">
+<div class="grid-x mg-accordion">
+  <div class="cell small-24  medium-14 medium-offset-5  mg-gutter-container ">
+        <div id="" class="accordion border-bottom-none is-visible" multiexpand="true">
+                                                                        <div class="accordion-group">
+
+                    <div data-title="Nutrition Value" class="panel-title " data-gtmevent='{"event":"pageAccordian","pageAccordian":"Nutrition Value" }'>
+                                                    <div class="thumbnail scale"></div>
+                                                <div class="extra-text" style="opacity:0">
+                            .
+                        </div>
+                                                    <h3 class="mg-dark h5">Nutrition Value</h3>
+                                            </div>
+                    <div class="panel-content bodycopy-small show ">
+                                                    <div class="grid-x mg-accordion-table">
+    <div class="cell mg-accordion-table__main  ">
+                                                            <div class="cell tbody">
+                                            <div class="tbody__cell">Energy</div>
+                                            <div class="tbody__cell">350.07 kcal</div>
+                                    </div>
+                            <div class="cell tbody">
+                                            <div class="tbody__cell">Protein</div>
+                                            <div class="tbody__cell">8.92 g</div>
+                                    </div>
+                            <div class="cell tbody">
+                                            <div class="tbody__cell">Carbohydrates</div>
+                                            <div class="tbody__cell">49.34 g</div>
+                                    </div>
+                            <div class="cell tbody">
+                                            <div class="tbody__cell">Fats</div>
+                                            <div class="tbody__cell">13.81 g</div>
+                                    </div>
+                    
+
+        
+    </div>
+            <div class="cell small-22 medium-22 large-22 xlarge-22 mg-accordion-table__disclaimer">
+            Information per serving
+        </div>
+    </div>
+                                            </div>
+                                    </div>
+                                    </div>
+    </div>
+    </div>
+</div>
+
+        
+<div class="grid-container no-padding mg-recipe-instructions">
+    <div class="grid-x">
+        <div class="cell small-24  medium-20 medium-offset-2  mg-gutter-container">
+            <div class="mg-recipe-instructions__container">
+                <div class="mg-recipe-instructions__container-left">
+                    <div class="recipe-floating-icon show-for-large" data-animation="mg-anim-slide-left" data-gtmevent='{ "event": "cookingModeActivation", "cookingModeActivation": "cooking mode activated" }'></div>
+                                            <div class="recipe-floating-icon recipe-floating-icon-alt hide-for-large hide" data-gtmevent='{ "event": "cookingModeActivation", "cookingModeActivation": "cooking mode activated" }'><span>Lets Cook</span></div>
+                                        <div class="mg-recipe-instructions__header">
+                        <h2 data-animation="mg-recipeInstruction_slideInFromLeft">Instruction</h2>
+                        <div class="recipe-inst-totalmins mg-recipe-instructions__header-totalTime " data-animation="mg-recipeInstruction_slideInFromLeft">32 Minutes</div>
+                    </div>
+                                            <div class="mg-recipe-instructions__steps">
+                            <div class="mg-recipe-instructions__steps-head">
+                                <h5 data-animation="mg-recipeInstruction_slideInFromLeft">Step 1</h5>
+                                <span class="" data-animation="mg-recipeInstruction_slideInFromLeft">15 Min</span>
+                            </div>
+                            <div class="mg-recipe-instructions__steps-instructions bodycopy" data-animation="mg-recipeInstruction_slideInFromLeft">
+                                <span>
+                                    Prepare ingredients as mentioned in the list.
+                                </span>
+                                                                                                <img class="popup-img mg-instruction_img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/e7783aceef3f1e1aeb7849eadd9b8ce7_Step_1_744_419.png" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                            </div>
+                        </div>
+                                            <div class="mg-recipe-instructions__steps">
+                            <div class="mg-recipe-instructions__steps-head">
+                                <h5 data-animation="mg-recipeInstruction_slideInFromLeft">Step 2</h5>
+                                <span class="" data-animation="mg-recipeInstruction_slideInFromLeft">10 Min</span>
+                            </div>
+                            <div class="mg-recipe-instructions__steps-instructions bodycopy" data-animation="mg-recipeInstruction_slideInFromLeft">
+                                <span>
+                                    Heat the oil and then roast the cumin seeds in it. Then, toss in the tomatoes, the onions and cook them well. Add the peas and the MAGGI Tomato ketchup, give it a stir, and let them cook for a while!
+                                </span>
+                                                                                                <img class="popup-img mg-instruction_img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/5ae3bb25cd76872300358430591a0c6b_Step_2_-_option_2_744_419.png" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                            </div>
+                        </div>
+                                            <div class="mg-recipe-instructions__steps">
+                            <div class="mg-recipe-instructions__steps-head">
+                                <h5 data-animation="mg-recipeInstruction_slideInFromLeft">Step 3</h5>
+                                <span class="" data-animation="mg-recipeInstruction_slideInFromLeft">5 Min</span>
+                            </div>
+                            <div class="mg-recipe-instructions__steps-instructions bodycopy" data-animation="mg-recipeInstruction_slideInFromLeft">
+                                <span>
+                                    Cook one pack of MAGGI Masala Noodles (just follow the instructions on the pack!) and transfer it onto a dish.
+                                </span>
+                                                                                                <img class="popup-img mg-instruction_img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/cfd8f90ff40a1813bcb8d410aad92b1c_Step_3_744_419.png" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                            </div>
+                        </div>
+                                            <div class="mg-recipe-instructions__steps">
+                            <div class="mg-recipe-instructions__steps-head">
+                                <h5 data-animation="mg-recipeInstruction_slideInFromLeft">Step 4</h5>
+                                <span class="" data-animation="mg-recipeInstruction_slideInFromLeft">2 Min</span>
+                            </div>
+                            <div class="mg-recipe-instructions__steps-instructions bodycopy" data-animation="mg-recipeInstruction_slideInFromLeft">
+                                <span>
+                                    Put the cumin-tomato-onion mix right on top of the MAGGI noodles and you are ready to serve the easy peasy fun!
+                                </span>
+                                                                                                <img class="popup-img mg-instruction_img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_744_419.jpg" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                            </div>
+                        </div>
+                                        
+                </div>
+                <div class="mg-recipe-instructions__container-progress" data-animation="mg-recipeInstruction_slideInFromLeft">
+                    <div class="mg-recipe-instructions__container-progressBar background--maggi-yellow"></div>
+                </div>
+
+                <div class="mg-step-main hide">
+    <div class="grid-container no-padding mg-cooking-mode-section  no-margin-from-top">
+        <div class="mg-slick">
+                                                <div class="js-vertical-slide">
+                        <div class="grid-x mg-cooking-mode-img"  data-duration="15 Min">
+                            <div class="cell small-24 medium-20 medium-offset-2 large-16 large-offset-4 xlarge-offset-6 xlarge-12">
+                                <div class="grid-container grid-x no-margin no-padding">
+                                    <div class="cell small-24">
+                                                                                    <img class="popup-img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/e7783aceef3f1e1aeb7849eadd9b8ce7_Step_1_744_419.png" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell small-24 medium-16 medium-offset-4 large-14 large-offset-5 xlarge-offset-7 xlarge-10">
+                                <div class="grid-container grid-x no-margin">
+                                    <div class="cell small-24">
+                                        <h3 class="step-title">Step 1
+                                            of
+                                            4</h3>
+                                        <div class="mg-step-tool-icons">
+                                                                                    </div>
+                                            
+                                        <p>
+                                            Prepare ingredients as mentioned in the list.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="js-vertical-slide">
+                        <div class="grid-x mg-cooking-mode-img"  data-duration="10 Min">
+                            <div class="cell small-24 medium-20 medium-offset-2 large-16 large-offset-4 xlarge-offset-6 xlarge-12">
+                                <div class="grid-container grid-x no-margin no-padding">
+                                    <div class="cell small-24">
+                                                                                    <img class="popup-img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/5ae3bb25cd76872300358430591a0c6b_Step_2_-_option_2_744_419.png" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell small-24 medium-16 medium-offset-4 large-14 large-offset-5 xlarge-offset-7 xlarge-10">
+                                <div class="grid-container grid-x no-margin">
+                                    <div class="cell small-24">
+                                        <h3 class="step-title">Step 2
+                                            of
+                                            4</h3>
+                                        <div class="mg-step-tool-icons">
+                                                                                    </div>
+                                            
+                                        <p>
+                                            Heat the oil and then roast the cumin seeds in it. Then, toss in the tomatoes, the onions and cook them well. Add the peas and the MAGGI Tomato ketchup, give it a stir, and let them cook for a while!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="js-vertical-slide">
+                        <div class="grid-x mg-cooking-mode-img"  data-duration="5 Min">
+                            <div class="cell small-24 medium-20 medium-offset-2 large-16 large-offset-4 xlarge-offset-6 xlarge-12">
+                                <div class="grid-container grid-x no-margin no-padding">
+                                    <div class="cell small-24">
+                                                                                    <img class="popup-img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/cfd8f90ff40a1813bcb8d410aad92b1c_Step_3_744_419.png" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell small-24 medium-16 medium-offset-4 large-14 large-offset-5 xlarge-offset-7 xlarge-10">
+                                <div class="grid-container grid-x no-margin">
+                                    <div class="cell small-24">
+                                        <h3 class="step-title">Step 3
+                                            of
+                                            4</h3>
+                                        <div class="mg-step-tool-icons">
+                                                                                    </div>
+                                            
+                                        <p>
+                                            Cook one pack of MAGGI Masala Noodles (just follow the instructions on the pack!) and transfer it onto a dish.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="js-vertical-slide">
+                        <div class="grid-x mg-cooking-mode-img"  data-duration="2 Min">
+                            <div class="cell small-24 medium-20 medium-offset-2 large-16 large-offset-4 xlarge-offset-6 xlarge-12">
+                                <div class="grid-container grid-x no-margin no-padding">
+                                    <div class="cell small-24">
+                                                                                    <img class="popup-img lazyload" data-src="https://d1uz88p17r663j.cloudfront.net/resized/f467223dca2ce18ba40fdc62fa8440ec_A42I0437_744_419.jpg" alt="Easy Peasy MAGGI Noodles Recipe"/>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x">
+                            <div class="cell small-24 medium-16 medium-offset-4 large-14 large-offset-5 xlarge-offset-7 xlarge-10">
+                                <div class="grid-container grid-x no-margin">
+                                    <div class="cell small-24">
+                                        <h3 class="step-title">Step 4
+                                            of
+                                            4</h3>
+                                        <div class="mg-step-tool-icons">
+                                                                                    </div>
+                                            
+                                        <p>
+                                            Put the cumin-tomato-onion mix right on top of the MAGGI noodles and you are ready to serve the easy peasy fun!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            
+        </div>
+        <div class="mg-cooking-mode-bar">
+            <ul class="slick-dots js-cooking-more-control show-for-medium" role="tablist">
+                                                            <li  class="slick-active"  role="presentation">
+                            <button type="button" role="tab" saria-controls="slick-slide1" aria-label="1 of 4" tabindex="0" aria-selected="true">
+                                <div class="mg-time-button">
+                                    <h4 class="step-number">01</h4>
+                                    <div class="time-label ">15 Min</div>
+                                </div>
+                            </button>
+                        </li>
+                                                                                <li  role="presentation">
+                            <button type="button" role="tab" saria-controls="slick-slide2" aria-label="2 of 4" tabindex="0" aria-selected="true">
+                                <div class="mg-time-button">
+                                    <h4 class="step-number">02</h4>
+                                    <div class="time-label ">10 Min</div>
+                                </div>
+                            </button>
+                        </li>
+                                                                                <li  role="presentation">
+                            <button type="button" role="tab" saria-controls="slick-slide3" aria-label="3 of 4" tabindex="0" aria-selected="true">
+                                <div class="mg-time-button">
+                                    <h4 class="step-number">03</h4>
+                                    <div class="time-label ">5 Min</div>
+                                </div>
+                            </button>
+                        </li>
+                                                                                <li  role="presentation">
+                            <button type="button" role="tab" saria-controls="slick-slide4" aria-label="4 of 4" tabindex="0" aria-selected="true">
+                                <div class="mg-time-button">
+                                    <h4 class="step-number">04</h4>
+                                    <div class="time-label ">2 Min</div>
+                                </div>
+                            </button>
+                        </li>
+                                                    <div class="mg-cooking-mode-bg"></div>
+            </ul>
+        </div>
+        <div class="mg-cooking-mode-bar mg-mobile-bar">
+            <div class="mg-customize-slick"></div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        
+ <div class="grid-container no-padding">
+<div class="grid-x mg-pdf-cta ">
+    <div class="cell small-24  medium-20 medium-offset-2  mg-gutter-container mg-pdf-main-container">
+        
+        <div class="mg-pdf-cta_container">
+            <h5>Recipe PDF</h5>                            <a data-gtmevent='{"event":"recipeDownload","recipeDownload":"" }' class="mg-pdf-btn" href="javascript:;" data-href="https://www.maggi.in/print/node/87083" title="Download" data-target="_blank">
+						<span></span>
+						Download
+				</a>
+                    </div>
+                    <div class="mg-pdf-checkbox">
+                <input id="pdf-cta-checkbox" type="checkbox"/>
+                <label for="pdf-cta-checkbox"> With pictures</label>
+            </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+        
+<section class="grid-container no-padding mg-sharing-icons" data-url= "https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c1ba248b0e3f6d6" >
+	<div class="grid-x">
+		<div class="cell   small-20 small-offset-2 medium-20 medium-offset-2 mg-gutter-container addthis_toolbox addthis_default_style addthis_32x32_style ">
+    <div class=" custom_images ">
+                    <h5>Share with friends</h5>
+                <ul>
+                                                                                <li>
+                                    <a rel="follow" href="#" data-url="" title="Facebook" target="" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Facebook" }' class=" addthis_button_facebook ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/images/Facebook.svg" alt="Facebook">
+                    </a>
+                                    </li>
+                                                                                <li>
+                                    <a rel="follow" href="#" data-url="" title="Twitter" target="" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Twitter" }' class=" addthis_button_twitter ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/images/Twitter.svg" alt="Twitter">
+                    </a>
+                                    </li>
+                                                                                <li>
+                                    <a rel="follow" href="#" data-url="" title="Pinterest" target="" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Pinterest" }' class=" addthis_button_pinterest ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/images/Pinterest.svg" alt="Pinterest">
+                    </a>
+                                    </li>
+                                                                                <li>
+                                    <a rel="follow" href="#" data-url="" title="Whatsapp" target="" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Whatsapp" }' class=" addthis_button_whatsapp ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/images/Whatsapp.svg" alt="Whatsapp">
+                    </a>
+                                    </li>
+                         <div class="mg-sharing-icons-disable"></div>         </ul>
+    </div>
+</div>
+		<div class="mg-term-condition-wrapper hide">
+			<div class="mg-term-condition">
+				<h3 class="heading3">Activate videos</h3>
+				<p>You have clicked a third party link and are about to leave the website. Note that we have no control over such third-party platforms and neither endorse nor accept responsibility for them, including their content, accuracy or function. Therefore your interaction with these linked platforms is at your own risk. We do not accept responsibility or liability for such third-party platforms and their terms and conditions. Read more in our Terms of Use here
+</p>
+				<button class="mg-term-condition__btn">
+					<span></span>
+					<h5>Ok, enable videos for this website</h5>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+  
+      </div>
+    </div>
+    <div class="grid-x mg-rating-row">
+      <div class="cell small-24">
+                
+
+<section class="grid-container no-padding mg-rating " data-recipe-id="87083" data-animation="mg-ratingRow-fadeInAppear">
+
+ <div class="grid-x grid-padding-x mg-rating__inner text--white">
+		<div class="cell hide-for-small-only  medium-1 medium-offset-2  mg-rating__txt-block"></div>
+		<div class="cell small-20 small-offset-2 medium-5 medium-offset-0 xlarge-4  mg-rating__txt-block" data-submitted-head="Thank you for your rating!">
+							<h5 class="after-text">Thank you for your rating!</h5>
+										<h5 class="text-current">We look forward to your review!</h5>
+					</div>
+		<div class="cell small-20 small-offset-2 medium-7 medium-offset-0 xlarge-7  mg-rating__txt-block" data-submitted-para="You have already rated this recipe / product.">
+							<p class="bodycopy-small mg-grey after-text">You have already rated this recipe / product.</p>
+										<p class="bodycopy-small mg-grey text-current">Click on the number of stars you would like to award: the higher the number, the better the rating.</p>
+					</div>
+		<div class="cell small-24  medium-7 xlarge-8 mg-rating__stars">
+			<div class="mg-rating_captcha mg-captcha-hide">
+				<div id="captcha"></div>
+				<div class="mg-captcha-row1">
+					<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+					<div>
+						<span class="mg-captcha-message"></span>
+						<button class="mg-captcha-btn">Submit</button>
+					</div>
+				</div>
+				<div class="mg-captcha-row2">
+					<span class="mg-refresh-arrow"></span>
+				</div>
+			</div>
+			<div class="mg-stars">
+				<div class="first-span">
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+				</div>
+				<div class="second-span">
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+					<span>
+						<svg viewbox="0 0 19.97 19.06">
+							<path xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>
+						</svg>
+					</span>
+				</div>
+			</div>
+			<div class="confirm">
+				<div class="text-wrapper">
+					<h5 class="text-min">Submit</h5>
+				</div>
+				<div class="checkmark">
+					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 26.58 19.88">
+						<title>Asset 10</title>
+						<g id="Layer_2" data-name="Layer 2">
+							<g id="Layer_1-2" data-name="Layer 1"><polyline class="cls-1" points="1 9.13 10.22 18.88 25.59 1"/></g>
+						</g>
+					</svg>
+				</div>
+			</div>
+
+		</div>
+	</div>
+  
+</section>
+
+  
+      </div>
+    </div>
+  </div>
+  <div class="grid-container no-padding no-margin grid-x mg-comment-row">
+    <div class="cell small-24">
+                      
+<div class="grid-container no-margin mg-comments">
+  <div class="grid-x">
+    <div class="cell small-24 medium-20 medium-offset-2">
+      <h2>Comment
+        <span class="mg-comments-total">8</span>
+      </h2>
+    </div>
+    <div class="cell small-24 medium-20 medium-offset-2 large-20 xlarge-8">
+      <form action="https://www.maggi.in/maggi-comment/add" data-time-format="0" data-timetext=Uhr>
+                <div class="mg-textarea">
+          <label for="text">
+            <textarea maxlength="4000" name="text" id="text" placeholder="Did you like it?" maxlength=""></textarea>
+            <span class="reply_placeholder hide">default</span>
+          </label>
+          <div class="msg-error">
+          <span class="mg-profanity-error"></span>
+                      <span class="mg-textarea-tip">
+              <span class="mg-textarea-count">0</span>/4000</span>
+                    </div>
+        </div>
+
+        <div class="mg-input hide">
+          <input type="text" name="name" id="hon_generated_id_name" placeholder="Enter your name"/>
+          <div class="mg-error e-name hide">Please enter a valid username. This must contain 3-15 characters. Characters A to Z and 0 to 9 are allowed</div>
+          <span class="mg-input-tip e-name">username</span>
+        </div>
+                <div class="mg-input mg-captcha hide" data-url="https://www.maggi.in/image/captcha/">
+          <div>
+              <img id="captcha_image" src="" />
+              <input type="text" name="user_captcha" id="user_captcha" placeholder="Captcha"/>
+              <input type="hidden" name="captcha" id="" placeholder="" value=""/>
+              <span class="mg-refresh-arrow"></span>
+          </div>
+          <div class="mg-error e-captcha hide"></div>
+          <span class="mg-input-tip e-captcha"></span>
+        </div>
+                          <input type="hidden" name="formId" value="maggiForm"/>
+                  <input type="hidden" name="c2" value="1"/>
+                  <input type="hidden" name="pid" value=""/>
+                  <input type="hidden" name="nid" value="87083"/>
+                <div class="mg-btn-wrapper hide">
+          <a  href="javascript:void(0)" class="mg-btn transparent small mg-cancel-button" title="Comment" target=""  rel="follow" >
+	<div>
+					Cancel
+							</div>
+</a>
+          <a  href="javascript:void(0)" class="mg-btn small inactive mg-submit-button" title="Comment" target=""  rel="follow" >
+	<div>
+					save
+							</div>
+</a>
+        </div>
+                  <input   id="Email"   type="text"   name="Email"    class="hide"   />
+                
+                
+                 <input  id="form_id"   type="hidden"   name="form_id"    class="hide"   value="comment_dsu_ratings_reviews_comment_type_form"  />
+              
+      </from>
+    </div>
+    <div class="cell small-24 medium-20 medium-offset-2 large-20 xlarge-10 mg-comments-message-wrapper">
+
+              <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>I</i>
+                Istanish</strong>
+              <div class="date_time" data-comment-time="1620145939">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                so sussy i love such yummy sus reciepe it make me happy and be a good imposter perfect dish after sabatoging O2. btw green is suuuuuuuuuuuuuuus
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="29" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>A</i>
+                Abrar</strong>
+              <div class="date_time" data-comment-time="1619785341">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                Is magic masala halal ?
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="27" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>K</i>
+                Kalyani satya</strong>
+              <div class="date_time" data-comment-time="1618244544">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                Really nyz..😍
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="24" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>9</i>
+                99siddhanT</strong>
+              <div class="date_time" data-comment-time="1616422217">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                My small brother is dead, it&#039;s weekly eating Maggi and so dead 😩😩😩😫😖😖😖😖😣😞😩😩😫😫😭😭😭😭😢
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="21" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>A</i>
+                Aaa</strong>
+              <div class="date_time" data-comment-time="1615084239">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                Horrible recipe 
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="20" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>z</i>
+                zoy</strong>
+              <div class="date_time" data-comment-time="1613820843">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                awsome recipie
+
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="17" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>O</i>
+                OP BOLTE</strong>
+              <div class="date_time" data-comment-time="1612232650">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                Nooo
+
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="13" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+            <div class="mg-comments-message hide">
+          <div class="main">
+            <div class="mg-comments-name">
+              <strong>
+                <i>S</i>
+                Shiva</strong>
+              <div class="date_time" data-comment-time="1610632236">
+                <strong class="mg-comment-date"></strong>
+                <strong class="mg-comment-uhr"></strong>
+                <strong class="mg-comment-uhr-txt">Uhr</strong>
+              </div>
+            </div>
+            <div>
+              <p>
+                Yess
+
+              </p>
+            </div>
+          </div>
+                      <a class="mg-comments-reply" data-id="8" href="javascript:void(0)">
+              
+            </a>
+                          </div>
+
+
+        <a class="mg-comments-loadmore" href="javascript:void(0)" data-gtmevent='{"event":"readComments","readComments":"readComments","tabTitle":"Load More" }'>
+      Load More
+    </a>
+  </div>
+</div></div>
+
+  
+    </div>
+  </div>
+
+  
+														<div class="grid-x mg-secondary-block">
+								<div class="cell small-24 medium-20 medium-offset-2">
+									  
+								</div>
+							</div>
+							<div class="grid-x mg-secondary-block">
+								<div class="cell small-24">
+									<div class="grid-x">
+										<div class="cell small-24 medium-offset-2 medium-9 xlarge-6 mg-tag-left-block">
+											  
+      
+<section class="mg-tags grid-container no-margin">
+          <h2>Discover More</h2>
+        <div class="mg-tags__block">
+                                  <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Brunch" }' href="/recipes/brunch/" title="Brunch" target="" class="mg-tag " style="background-color:; color:"  >Brunch</a>
+                    <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Indian" }' href="/recipes/indian/" title="Indian" target="" class="mg-tag " style="background-color:; color:"  >Indian</a>
+                    <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Main Course" }' href="/recipes/main-course/" title="Main Course" target="" class="mg-tag " style="background-color:; color:"  >Main Course</a>
+                    <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Small meal" }' href="/recipes/small-meal/" title="Small meal" target="" class="mg-tag " style="background-color:; color:"  >Small meal</a>
+                    <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Vegetarian" }' href="/recipes/vegetarian/" title="Vegetarian" target="" class="mg-tag " style="background-color:; color:"  >Vegetarian</a>
+        </div>
+    </section>
+
+
+
+    
+
+										</div>
+										<div class="cell small-24 medium-10 medium-offset-1 xlarge-offset-2 xlarge-12">
+											  
+                  <section class="grid-container mg-teaser-recipe-1 no-margin-from-bottom">
+	<div class="grid-x mg-teaser-recipe-1_content">
+		<div class="cell small-24 upper-content">
+			<h2>More Interesting Recipes</h2>
+			<a class="show-for-xlarge-only" href="/search/?teasertag=teaser_recipe_rdp-87083&amp;content_type=recipe&amp;search_key=Easy%20Peasy%20MAGGI%20Noodles%20Recipe" target="_self">
+				<h5>Show more recipes</h5>
+			</a>
+		</div>
+					<div class="cell small-24 xlarge-12">
+								<div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Cumin Dal Shorba with Lemon MAGGI Noodles Recipe" }'  href='https://www.maggi.in/recipes/cumin-dal-shorba-lemon-maggi-noodles/' target='_self' class="js-mg-card-link">
+        <div  class="mg-teaser-recipe-alt" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/154daac726913d09342f574cd420c3ff_A42I1140_126_126.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/154daac726913d09342f574cd420c3ff_A42I1140_126_126.jpg'>
+            <source media="(min-width: 768px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/154daac726913d09342f574cd420c3ff_A42I1140_126_126.jpg'>
+            <source media="(min-width: 0px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/154daac726913d09342f574cd420c3ff_A42I1140_126_126.jpg'>
+            <img class="popup-img lazyload" src="https://d1uz88p17r663j.cloudfront.net/resized/154daac726913d09342f574cd420c3ff_A42I1140_126_126.jpg" alt="Cumin Dal Shorba with Lemon MAGGI Noodles Recipe"/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="js-mg-recipe-info mg-recipe-info ">Cumin Dal Shorba with Lemon MAGGI Noodles Recipe</div>
+                        <div class="mg-recipe-stats">
+                <span class="js-recipe-star"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+        </div>
+</span>
+
+                                    <span class="mg-duration js-mg-duration">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">26 Min</span>
+                    </span>
+                    <span class="mg-difficulty js-mg-difficulty">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Easy</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+</div>
+			</div>
+					<div class="cell small-24 xlarge-12">
+								<div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Paneer Taka Tak MAGGI Noodles Recipe" }'  href='https://www.maggi.in/recipes/paneer-taka-tak-maggi-noodles/' target='_self' class="js-mg-card-link">
+        <div  class="mg-teaser-recipe-alt" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/cbcb7cf4e86fcb7e462b74bcb7fc697e_A42I1905_126_126.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/cbcb7cf4e86fcb7e462b74bcb7fc697e_A42I1905_126_126.jpg'>
+            <source media="(min-width: 768px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/cbcb7cf4e86fcb7e462b74bcb7fc697e_A42I1905_126_126.jpg'>
+            <source media="(min-width: 0px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/cbcb7cf4e86fcb7e462b74bcb7fc697e_A42I1905_126_126.jpg'>
+            <img class="popup-img lazyload" src="https://d1uz88p17r663j.cloudfront.net/resized/cbcb7cf4e86fcb7e462b74bcb7fc697e_A42I1905_126_126.jpg" alt="Paneer Taka Tak MAGGI Noodles Recipe"/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="js-mg-recipe-info mg-recipe-info ">Paneer Taka Tak MAGGI Noodles Recipe</div>
+                        <div class="mg-recipe-stats">
+                <span class="js-recipe-star"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+        </div>
+</span>
+
+                                    <span class="mg-duration js-mg-duration">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">36 Min</span>
+                    </span>
+                    <span class="mg-difficulty js-mg-difficulty">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Easy</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+</div>
+			</div>
+					<div class="cell small-24 xlarge-12">
+								<div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"MAGGI Biryani Noodles Recipe" }'  href='https://www.maggi.in/recipes/maggi-biryani-noodles/' target='_self' class="js-mg-card-link">
+        <div  class="mg-teaser-recipe-alt" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/f453674e268bf386d75803ddba6be54d_A42I0655_126_126.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/f453674e268bf386d75803ddba6be54d_A42I0655_126_126.jpg'>
+            <source media="(min-width: 768px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/f453674e268bf386d75803ddba6be54d_A42I0655_126_126.jpg'>
+            <source media="(min-width: 0px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/f453674e268bf386d75803ddba6be54d_A42I0655_126_126.jpg'>
+            <img class="popup-img lazyload" src="https://d1uz88p17r663j.cloudfront.net/resized/f453674e268bf386d75803ddba6be54d_A42I0655_126_126.jpg" alt="MAGGI Biryani Noodles Recipe"/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="js-mg-recipe-info mg-recipe-info ">MAGGI Biryani Noodles Recipe</div>
+                        <div class="mg-recipe-stats">
+                <span class="js-recipe-star"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+           
+<span class=" mg-half-stars">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
+        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
+        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
+    </svg>
+</span>
+    </div>
+</span>
+
+                                    <span class="mg-duration js-mg-duration">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">60 Min</span>
+                    </span>
+                    <span class="mg-difficulty js-mg-difficulty">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Medium</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+</div>
+			</div>
+					<div class="cell small-24 xlarge-12">
+								<div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"MAGGI Noodles Salsa Recipe" }'  href='https://www.maggi.in/recipes/maggi-noodles-salsa/' target='_self' class="js-mg-card-link">
+        <div  class="mg-teaser-recipe-alt" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/e48d12864810780268a1a0a9c06ea311_A42I7745_126_126.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/e48d12864810780268a1a0a9c06ea311_A42I7745_126_126.jpg'>
+            <source media="(min-width: 768px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/e48d12864810780268a1a0a9c06ea311_A42I7745_126_126.jpg'>
+            <source media="(min-width: 0px)" srcset='https://d1uz88p17r663j.cloudfront.net/resized/e48d12864810780268a1a0a9c06ea311_A42I7745_126_126.jpg'>
+            <img class="popup-img lazyload" src="https://d1uz88p17r663j.cloudfront.net/resized/e48d12864810780268a1a0a9c06ea311_A42I7745_126_126.jpg" alt="MAGGI Noodles Salsa Recipe"/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="js-mg-recipe-info mg-recipe-info ">MAGGI Noodles Salsa Recipe</div>
+                        <div class="mg-recipe-stats">
+                <span class="js-recipe-star"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" ">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+        </div>
+</span>
+
+                                    <span class="mg-duration js-mg-duration">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">30 Min</span>
+                    </span>
+                    <span class="mg-difficulty js-mg-difficulty">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Easy</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+</div>
+			</div>
+				<a class="cell small-24 hide-for-xlarge-only" href="/search/?teasertag=teaser_recipe_rdp-87083&amp;content_type=recipe&amp;search_key=Easy%20Peasy%20MAGGI%20Noodles%20Recipe" target="_self">
+			<h5>Show more recipes</h5>
+		</a>
+	</div>
+</section>
+    
+    
+										</div>
+									</div>
+								</div>
+								<div class="cell small-24">
+									<footer>
+										  <section class="grid-container no-margin mg-footer">
+    <div class="grid-x mg-footer__block">
+
+          
+
+<div class="cell   small-24 medium-20 medium-offset-2 large-6 xlarge-9 ">
+    <div class="mg-footer__block-icon ">
+                <ul>
+                                            <li>
+                                    <a rel="follow" href="https://www.facebook.com/MeriMaggiIndia/" data-url="" title="Facebook" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Facebook" }' class=" facebook  background--social-icons-bg-color hover-effect ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/facebook.svg" alt="Facebook">
+                    </a>
+                                    </li>
+                                            <li>
+                                    <a rel="follow" href="https://www.youtube.com/user/MeriMAGGI/featured/" data-url="" title="Youtube" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Youtube" }' class=" youtube  background--social-icons-bg-color hover-effect ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/youtube.svg" alt="Youtube">
+                    </a>
+                                    </li>
+                                            <li>
+                                    <a rel="follow" href="https://www.instagram.com/maggiindia/" data-url="" title="Instagram" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Instagram" }' class=" instagram  background--social-icons-bg-color hover-effect ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-02/instagram.svg" alt="Instagram">
+                    </a>
+                                    </li>
+                                            <li>
+                                    <a rel="follow" href="https://twitter.com/MaggiIndia/" data-url="" title="Twitter" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Twitter" }' class=" twitter  background--social-icons-bg-color hover-effect ">
+                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-03/Twitter%20%281%29.svg" alt="Twitter">
+                    </a>
+                                    </li>
+                                </ul>
+    </div>
+</div>
+<div class="cell small-24 medium-9 medium-offset-2 large-offset-0 large-7 xlarge-6">
+    <div class="mg-footer__block-link footer-links">
+        <ul>
+                                            <li>
+                    <a rel="" href="https://www.maggi.in/contact_us" class="footer-link mg-grey" title="Contact Us" target="_self">
+                        Contact Us
+                    </a>
+                </li>
+                                            <li>
+                    <a rel="" href="/copyright/" class="footer-link mg-grey" title="Copyright" target="_self">
+                        Copyright
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+<div class="cell small-24 medium-9 medium-offset-2 large-offset-0 large-7 xlarge-6">
+    <div class="mg-footer__block-link footer-links">
+        <ul>
+                                            <li>
+                    <a rel="" href="/terms-of-use/" class="footer-link mg-grey" title="Terms and Conditions" target="_blank">
+                        Terms and Conditions
+                    </a>
+                </li>
+                                            <li>
+                    <a rel="" href="/privacy-policy/" class="footer-link mg-grey" title="Privacy Policy" target="_self">
+                        Privacy Policy
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+
+
+<div class="mg-footer__copyright cell small-24 medium-20 medium-offset-2">
+                
+            ® Reg. Trademark of Société des Produits Nestlé S.A. All rights reserved.
+      
+</div>
+
+
+                    </div>
+
+    </section>
+
+									</footer>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  </div>
+
+          
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/87083","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"core\/html5shiv,datalayer\/ajax,datalayer\/behaviors,dsu_product\/dsu-product,dsu_ratings_reviews\/dsu-event-tracking,extlink\/drupal.extlink,gigya\/drupalGigya,gigya_raas\/gigyaRaas,ln_adimo\/multitouchpoint,ln_srh_mymenuiq\/mymenuiq,maggi\/global-css,maggi\/global-js,maggi_form_validations\/maggi-social-share,newnestlegermany_social_share\/social-share,nodeviewcount\/nodeviewcount.base,system\/base","theme":"maggi","theme_token":null},"ajaxTrustedUrl":[],"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0}}},"gigya":{"globalParameters":{"bypassCookiePolicy":"never","enabledProviders":"*","sessionExpiration":"180","rememberSessionExpiration":""},"apiKey":"3_-OR1oJYHfAEgaWv3pMMpp0YjJKvZ5am9XHCqHQKCjRxNsIPZZvHkz66KzgCiPxLB","dataCenter":"us1.gigya.com","lang":"en","enableRaaS":true,"raas":{"login":{"screenSet":"maggi.globaltemplate.nestle.in-1-RegistrationLogin","mobileScreenSet":"","startScreen":"gigya-login-screen","sessionExpiration":"180","rememberSessionExpiration":""},"register":{"screenSet":"maggi.globaltemplate.nestle.in-1-RegistrationLogin","mobileScreenSet":"","startScreen":"gigya-register-screen","sessionExpiration":"180","rememberSessionExpiration":""},"customScreenSets":[]}},"gigyaExtra":{"loginRedirect":"\/","logoutRedirect":"\/logout-success","isLogin":false,"session_type":"fixed","session_time":"180","remember_me_session_time":"180"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":true,"extClass":"0","extLabel":"(Link ist extern)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"Dieser Link f\u00fchrt Sie zu einer externen Website. Wir sind nicht f\u00fcr deren Inhalt verantwortlich.","mailtoClass":"0","mailtoLabel":"(Link zum E-Mailversand)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"nodeviewcount":{"url":"\/nodeviewcount\/updateCounter","data":{"87083":{"nid":"87083","uid":0,"view_mode":"full"}}},"comment_allowed":1,"page_type":"default","recipeId":"84618","nutritionalScore":"80","baseUrl":"https:\/\/www.maggi.in","newnestlegermany_social_share":{"networks":{"services":["facebook","twitter","pinterest","whatsapp"],"settings":{"pubid_desktop":null,"pubid_mobile":null,"active":null,"desktop_theme":null,"desktop_position":null,"enable_desktop":null,"enable_mobile":null,"mobile_theme":null,"mobile_position":null,"api":null,"is_mobile":"mobile"}}},"ajax":[],"user":{"uid":0,"permissionsHash":"42feb5af34f3009682a89f688371058d3ebc48f750fbd76956cd6c7cde118c25"}}</script>
+<script src="/sites/default/files/js/js_as1hA7VOLN8tr9WQAYhCc6Oc-sFV86IVg54g8aO-0XQ.js"></script>
+
+          <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-a6706952ebb4695212a","applicationID":"838612098","transactionName":"YQFQNxFSDxFYAhZYVlhLcwAXWg4MFiUQRElXCG4NDFcEPnoODEVLWQheBhFvLw1dBDRYXEEnXQ0XQQ4OVQQQHAdADVcU","queueTime":0,"applicationTime":1922,"atts":"TUZTQVlIHB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+          </html>
